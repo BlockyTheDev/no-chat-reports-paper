@@ -6,9 +6,9 @@ plugins {
     id("net.minecrell.plugin-yml.bukkit") version "0.5.1"
 }
 
-group = "net.satellyte"
+group = "dev.igalaxy"
 version = "1.0.0"
-description = "My Kotlin Paper Plugin"
+description = "No Chat Reports"
 
 repositories {
     mavenCentral()
@@ -21,6 +21,8 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     paperDevBundle("1.19-R0.1-SNAPSHOT")
+
+    compileOnly("com.comphenix.protocol:ProtocolLib:5.0.0-SNAPSHOT")
 }
 
 val shade = configurations.create("shade")
@@ -64,29 +66,9 @@ tasks {
 }
 
 bukkit {
-    name = "Starter"
+    name = "No Chat Reports"
     description = description
-    main = "net.satellyte.starter.Starter"
+    main = "dev.igalaxy.nochatreports.NoChatReports"
     version = version
     apiVersion = "1.19"
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            artifactId = "starter"
-            from(components["java"])
-        }
-    }
-    repositories {
-        maven {
-            val releasesRepoUrl = "https://repo.example.com/releases"
-            val snapshotsRepoUrl = "https://repo.example.com/snapshots"
-            url = uri(if (project.hasProperty("release")) releasesRepoUrl else snapshotsRepoUrl)
-            credentials {
-                username = System.getenv("MAVEN_REPO_USERNAME")
-                password = System.getenv("MAVEN_REPO_PASSWORD")
-            }
-        }
-    }
 }

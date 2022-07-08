@@ -1,8 +1,8 @@
-package net.satellyte.starter
+package dev.igalaxy.nochatreports
 
 import org.bukkit.plugin.java.JavaPlugin
 
-class Starter : JavaPlugin() {
+class NoChatReports : JavaPlugin() {
     override fun onEnable() {
         super.onEnable()
     }
