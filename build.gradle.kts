@@ -64,9 +64,10 @@ tasks {
 }
 
 bukkit {
-    name = "No Chat Reports"
+    name = "NoChatReports"
     description = description
     main = "dev.igalaxy.nochatreports.NoChatReports"
     version = version
     apiVersion = "1.19"
+    depend = listOf("ProtocolLib")
 }
